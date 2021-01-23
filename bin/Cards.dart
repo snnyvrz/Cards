@@ -32,6 +32,13 @@ class Deck {
   Iterable<Card> cardsWithSuit(String suit) {
     return cards.where((card) => card.suit == suit );
   }
+
+  List<Card> deal(int handSize) {
+    var hand = cards.sublist(0, handSize);
+    cards = cards.sublist(handSize);
+
+    return hand;
+  }
 }
 
 class Card {
