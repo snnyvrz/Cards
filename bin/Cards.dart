@@ -1,7 +1,7 @@
 void main() {
   var deck = Deck();
   deck.shuffle();
-  print(deck);
+  print(deck.cardsWithSuit('Diamonds'));
 }
 
 class Deck {
@@ -27,6 +27,10 @@ class Deck {
 
   void shuffle() {
     cards.shuffle();
+  }
+
+  Iterable<Card> cardsWithSuit(String suit) {
+    return cards.where((card) => card.suit == suit );
   }
 }
 
