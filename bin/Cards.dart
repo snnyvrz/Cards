@@ -1,5 +1,6 @@
 void main() {
   var deck = Deck();
+  deck.shuffle();
   print(deck);
 }
 
@@ -22,6 +23,10 @@ class Deck {
   @override
   String toString() {
     return cards.toString();
+  }
+
+  void shuffle() {
+    cards.shuffle();
   }
 }
 
