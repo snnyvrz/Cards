@@ -14,7 +14,9 @@ class Deck {
 
     for (var suit in suits) {
       for (var rank in ranks) {
-        var card = Card(rank, suit);
+        var card = Card(
+            rank: rank,
+            suit: suit);
         cards.add(card);
       }
     }
@@ -39,13 +41,17 @@ class Deck {
 
     return hand;
   }
+
+  void removeCard(String suit, String rank) {
+    cards.removeWhere((card) => card.suit == suit && card.rank == rank);
+  }
 }
 
 class Card {
   String rank;
   String suit;
 
-  Card(this.rank, this.suit);
+  Card({this.rank, this.suit});
 
   @override
   String toString() {
