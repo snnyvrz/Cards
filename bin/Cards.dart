@@ -1,3 +1,8 @@
+void main() {
+  var deck = Deck();
+  print(deck);
+}
+
 class Deck {
   List<Card> cards = [];
 
@@ -13,6 +18,11 @@ class Deck {
       }
     }
   }
+
+  @override
+  String toString() {
+    return cards.toString();
+  }
 }
 
 class Card {
@@ -20,4 +30,9 @@ class Card {
   String suit;
 
   Card(this.rank, this.suit);
+
+  @override
+  String toString() {
+    return '$rank of $suit';
+  }
 }
